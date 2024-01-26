@@ -1,0 +1,298 @@
+// variable for font-face
+$font-path: "assets/fonts/";
+
+@font-face {
+    font-family: "MyFont";
+    src: url("#{$font-path}Roboto-bold.ttf") format("truetype"),
+        url("#{$font-path}Roboto-regular.ttf") format("truetype");
+}
+
+// Variables for colors
+$tomato: hsl(4, 100%, 67%);
+$dark-slate-grey: hsl(234, 29%, 20%);
+$charcoal-grey: hsl(235, 18%, 26%);
+$grey: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+
+// Reset basic styles
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: "Roboto", sans-serif;
+    vertical-align: baseline;
+}
+
+// HTML5 display-role reset for older browsers
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+// Body reset
+body {
+    line-height: 1;
+}
+
+// Remove list styles
+ul,
+ol {
+    list-style: none;
+}
+
+// Remove hyperlink styles
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Remove default button styles
+button,
+input,
+select,
+textarea {
+    margin: 0;
+}
+
+// Responsive images
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    min-height: 100vh;
+    background-color: $dark-slate-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        max-width: 600px;
+        width: 100%;
+        padding: 1.5rem;
+        gap: 1.8rem;
+        display: flex;
+        background-color: $white;
+        box-shadow: 4px 4px 9px 0px black;
+        border-radius: 15px;
+
+        .section-1 {
+            padding-top: 2.5rem;
+            width: 55%;
+
+            form {
+                .text-heading {
+                    width: 100%;
+                    font-size: 2.3rem;
+                    font-weight: 700;
+                    color: $charcoal-grey;
+                    margin-bottom: 1rem;
+                    text-align: left;
+                }
+
+                .text-paragraph {
+                    min-width: 320px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    margin-bottom: 1rem;
+                    color: $dark-slate-grey;
+                }
+
+                ul {
+                    margin-bottom: 1rem;
+                }
+
+                ul.benefits-list li {
+                    padding-left: 25px;
+                    background: url("/assets/images/icon-list.svg") no-repeat
+                        left center;
+                    background-size: 15px 18px;
+                    margin-bottom: 15px;
+                    color: $charcoal-grey;
+                    font-weight: 700;
+                }
+
+                label {
+                    font-size: small;
+                    color: $charcoal-grey;
+                    font-weight: 700;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 0.5rem;
+                    margin-top: 0.5rem;
+                    margin-bottom: 1.2rem;
+                    color: $grey;
+                    border: 1px solid $grey;
+                    border-radius: 5px;
+                }
+
+                button {
+                    padding: 0.6rem;
+                    width: 100%;
+                    color: $white;
+                    font-weight: 700;
+                    cursor: pointer;
+                    background-color: $charcoal-grey;
+                    border-radius: 5px;
+                    border: none;
+                }
+                .submitBtn:hover {
+                    background: linear-gradient(
+                        to bottom,
+                        $tomato 5%,
+                        $tomato 100%
+                    );
+                    background-color: $tomato;
+                    box-shadow: 4px 4px 9px 0px $tomato;
+                }
+                .submitBtn:active {
+                    position: relative;
+                    top: 1px;
+                    box-shadow: 4px 4px 9px 0px $tomato;
+                }
+            }
+        }
+    }
+}
+.image {
+    max-width: 100%;
+    height: 10%;
+
+    .mobile {
+        display: none;
+    }
+}
+
+// Breakpiont for mobile design
+@media (max-width: 375px) {
+    body {
+        display: block;
+
+        .container {
+            flex-direction: column-reverse;
+            padding: 0;
+
+            .section-1 {
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+    }
+    .image {
+        width: 100%;
+
+        .mobile {
+            display: block;
+        }
+        .desktop {
+            display: none;
+        }
+    }
+}
