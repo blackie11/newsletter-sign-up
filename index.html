@@ -27,7 +27,7 @@
         <main class="container">
             <!-- Sign-up form start -->
             <section class="section-1">
-                <form action="POST">
+                <form action="#" method="post" id="subscriptionForm">
                     <h1 class="text-heading">Stay updated!</h1>
                     <p class="text-paragraph">
                         Join 60,000+ product managers receiving monthly updates
@@ -42,12 +42,12 @@
                         >Email address</label
                     ><br />
                     <input
-                        type="text"
+                        type="email"
                         id="email"
+                        name="email"
                         placeholder="email@company.com"
-                        required
                     />
-                    <button class="submitBtn">
+                    <button class="submitBtn" value="submit">
                         Subscribe to monthly newsletter
                     </button>
                 </form>
@@ -70,11 +70,21 @@
 
         <!-- Success message start -->
 
-        <!-- Thanks for subscribing! A confirmation email has been sent to
-            ash@loremcompany.com. Please open it and click the button inside to
-            confirm your subscription. Dismiss message
-        </div> -->
-        <!-- Success message end -->
+        <div id="successMessage" class="success-message">
+            <div class="success-icon">
+                <img src="/assets/images/icon-success.svg" alt="icon-success" />
+            </div>
+            <div class="message-heading">
+                <h2>Thanks for subscribing!</h2>
+                <p>
+                    A confirmation email has been sent to
+                    <span class="suc-email"> ash@loremcompany.com.</span> Please
+                    open it and click the button inside to confirm your
+                    subscription.
+                </p>
+            </div>
+            <button class="clearBtn">Dismiss message</button>
+        </div>
 
         <!-- <div class="attribution">
             Challenge by
@@ -84,5 +94,7 @@
                 >Frontend Mentor</a
             >. Coded by <a href="#">Your Name Here</a>.
         </div> -->
+
+        <script src="/main.js"></script>
     </body>
 </html>
