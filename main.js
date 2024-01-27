@@ -14,10 +14,19 @@ function onSubmitForm(e) {
         input.style.border = "1px solid #ff6347";
         e.preventDefault(); // Prevent form submission
     } else {
-        window.location.href = "success-page.html"; // Replace with your desired page URL
+        document.querySelector(".container").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+        e.preventDefault();
     }
 }
 
+function onClick(e) {
+    document.querySelector(".container").style.display = "flex";
+    document.getElementById("successMessage").style.display = "none";
+    return;
+}
+
+// function to validate email
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -26,3 +35,5 @@ function isValidEmail(email) {
 document
     .getElementById("subscriptionForm")
     .addEventListener("submit", onSubmitForm);
+
+document.querySelector(".clearBtn").addEventListener("click", onClick);
