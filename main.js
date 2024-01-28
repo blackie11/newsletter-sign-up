@@ -19,8 +19,8 @@ function onSubmitForm(e) {
         e.preventDefault();
     }
 }
-
-function onClick(e) {
+// function to dismiss success message from the DOM
+function onClick() {
     document.querySelector(".container").style.display = "flex";
     document.getElementById("successMessage").style.display = "none";
     return;
@@ -32,8 +32,10 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
+// event handling for submission of form for validating
 document
     .getElementById("subscriptionForm")
     .addEventListener("submit", onSubmitForm);
 
+// event handling for success message
 document.querySelector(".clearBtn").addEventListener("click", onClick);
